@@ -1,0 +1,69 @@
+#versionHeader
+{
+  
+  text-align: center;
+  text-shadow: 2px 2px 5px #e921ce;
+  opacity: .75;
+}
+
+.button
+{
+  background-color: #d1e4e3;
+}
+
+#pumpkin
+{
+  width: 150px;
+  height: 75px;
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+  position: relative;
+  border: solid;
+
+}
+
+.textbox
+{
+  float: left;
+  margin-right: 8%;
+}
+
+#center
+{
+  text-align: center;
+   margin-left: -10%;
+}
+
+#name
+{
+  margin-top: 1.5%;
+  margin-left: -11.2%;
+}
+
+.left
+{
+  float: left;
+}
+
+
+.content {
+  margin: auto;
+  width: 100%;
+  border: 3px solid green;
+  padding: 10px;
+  padding-bottom: 15px;
+  
+}
+
+body
+{
+  background-color: rgb(144, 225, 245);
+  
+}
+
+li
+{
+  text-align: justify;
+  margin-left: 40%;
+}
