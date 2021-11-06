@@ -14,10 +14,10 @@
 #pumpkin
 {
   width: 150px;
-  height: 75px;
+  height: 80px;
   float: right;
   margin-right: 5%;
-  margin-top: 2%;
+  margin-top: %;
   position: relative;
   border: solid;
 
@@ -66,4 +66,9 @@ li
 {
   text-align: justify;
   margin-left: 40%;
+}
+
+#btnSubmit
+{
+  margin-right: 5%;
 }
