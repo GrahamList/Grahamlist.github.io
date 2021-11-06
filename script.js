@@ -1,8 +1,8 @@
 // Patrick Graham
 // Fall 2021
 // Web233 Javascript
-// Date: 10/31/21
-// Assignment #12
+// Date: 11/5/21
+// Assignment #13
 
 var addtocart = [];
 
@@ -13,25 +13,19 @@ var MyItems = {
 
 var shoppinglist = [];
 
-function addShoppinglist(item,cost) {
+function addShoppinglist(item) {
   var groc="";
   var count=0;
 
   MyItems.name=item;
-  MyItems.price=cost;
+  
   
   for (var x in MyItems)
   {
-    if (count===0){
-      groc += " | ";
-    }
-    if (count===1){
-      groc += " $";
-    }
+    
+    
     groc += MyItems[x];
-    if (count===0){
-      groc += ", ";
-    }
+    
    count++;
   }
   
@@ -51,7 +45,7 @@ var btndelete =  ' <input class="button" name="delete" type="button" value="Remo
 var btnupdate =  ' <input class="button" name="edit" type="button" value="Edit Item" onclick="changeShoppinglist(' + i + ')" />';
 var arrays = shoppinglist[i];
 arrays = "'"+arrays+"'";
-var btnaddcart =  '<label><input name="add" type="checkbox" id="adds" value="Add to Shopping Cart" onclick="addtoshopcart('+arrays+',' + i + ')" addtocart.checked=false"/>Add To Cart</label>';
+var btnaddcart =  '<label><input name="add" type="checkbox" id="adds" value="Add to Shopping Cart" onclick="addtoshopcart('+arrays+',' + i + ')" addtocart.checked=false"/></label>';
 TheList = TheList + shoppinglist[i] + btndelete + ' ' +  btnupdate + ' ' + btnaddcart + '<br>';
 }
   if (shoppinglist.length >= 1)
@@ -65,12 +59,17 @@ TheList = TheList + shoppinglist[i] + btndelete + ' ' +  btnupdate + ' ' + btnad
 "</div>"
 }
 
+
 function displayShoppingCart() {
 "<div class = left>";
 var TheList = "";
 var TheRow = "";
 var arrayLength = addtocart.length;
-for (var i = 0; i < arrayLength; i++) {
+for (var i = 0; i < arrayLength; i++) 
+{
+
+
+
 var btndelete =  ' <input class="button" id="remove" name="delete" type="button" value="Remove Item" onclick="deleteShoppingCart(' + i + ')" />';
 
 var arrays = addtocart[i];
@@ -96,7 +95,7 @@ if (arrayLength > 0)
 function clearFocus()
 {
   document.getElementById("item").value = "";
-  document.getElementById("cost").value = "";
+  
   document.getElementById("item").focus();
 }
 
@@ -121,10 +120,9 @@ function changeShoppinglist(position) {
  arrays = arrays.split(",");
    var e1 = arrays[0];
   var e2 = arrays[1];
-var ReplacedAmount = e2.replace(/\$/g,'');
+
  var eitem = prompt("Please enter new item", e1);
- var ecost = prompt("Please enter the cost", ReplacedAmount);
- shoppinglist[position] = eitem + "," + ' $' + ecost;
+ shoppinglist[position] = eitem
  displayShoppinglists();
  displayShoppingCart();
  savecookie();
@@ -200,8 +198,10 @@ function savecookie()
 }
 
 window.onload = function() {
-  populateshoppinglistonload();
-  displayShoppinglists();
+alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Students**\n\nQuestions?\nemail Professor Chuck Konkol\nc.konkol@rockvalleycollege.edu\n\nRegister @ RockValleyCollege.edu");
+populateshoppinglistonload();
+displayShoppinglists();
+clearFocus();
 };
 
 function populateshoppinglistonload()
