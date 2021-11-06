@@ -6,20 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Shopping List Version 3.2</title>
+    <title>Shopping List</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1 id="versionHeader">Shopping List Version 4.0
+    <h1 id="versionHeader">Shopping List
     </h1>
     <img id="pumpkin"     src='https://images.theconversation.com/files/387712/original/file-20210304-15-n1wg4d.jpg?ixlib=rb-1.1.0&rect=29%2C302%2C3812%2C1903&q=45&auto=format&w=1356&h=668&fit=crop' >
     <div class="content">
       <div id="center">
         <div id="name">
-    Name:&nbsp;&nbsp;<input type="text" id="item" name="item" /><br><br>
+        
+        
+        <label>Item: </label><input type="text" id="item" name="item" 
+        onkeydown = "if (event.keyCode == 13) btnSubmit.click()" 
+        maxlength="18" placeholder="enter item < 19 characters"/>
+   
         </div>
-    Cost:  &nbsp;&nbsp;&nbsp;<input type="text" id="cost" name="cost" />
-    <input class="button" name="submit" type="button" value="Add Item" onclick="addShoppinglist(item.value, cost.value)" />
+    
+    <input id=btnSubmit class="button" name="submit" type="button" value="Add Item" onclick="addShoppinglist(item.value)" />
 
         </div>
     
