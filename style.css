@@ -8,7 +8,16 @@
 
 .button
 {
+  margin-top: 5px;
+  margin-bottom: -5px;
   background-color: #d1e4e3;
+}
+
+#footer
+{
+  text-shadow: 2px 2px 5px #e921ce;
+  text-align: center;
+  opacity: .75;
 }
 
 #pumpkin
