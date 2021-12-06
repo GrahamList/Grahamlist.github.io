@@ -6,10 +6,7 @@
   opacity: .75;
 }
 
-#sharebutton
-{
-  float: left;
-}
+
 
 .button
 {
@@ -24,6 +21,7 @@
   text-shadow: 2px 2px 5px #e921ce;
   text-align: center;
   opacity: .75;
+  margin-top: 100px;
 }
 
 #pumpkin
@@ -32,10 +30,16 @@
   height: 80px;
   float: right;
   margin-right: 5%;
-  margin-top: %;
+  margin-top: 1.5%;
   position: relative;
   border: solid;
 
+}
+#sharebutton
+{
+  
+  margin-bottom: -5px;
+  margin-left: -16.5%;
 }
 
 .textbox
@@ -53,7 +57,7 @@
 #name
 {
   margin-top: 1.5%;
-  margin-left: -11.2%;
+  margin-left: -5%;
 }
 
 .left
@@ -80,10 +84,11 @@ body
 li
 {
   text-align: justify;
-  margin-left: 40%;
+  margin-left: 35%;
 }
 
 #btnSubmit
 {
-  margin-right: 5%;
+  
+
 }
