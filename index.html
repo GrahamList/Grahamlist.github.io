@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Shopping List</title>
+    <title>Random Thoughts List</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1 id="versionHeader">Shopping List
+    <h1 id="versionHeader">Random Thoughts List
     </h1>
     <img id="pumpkin"     src='https://images.theconversation.com/files/387712/original/file-20210304-15-n1wg4d.jpg?ixlib=rb-1.1.0&rect=29%2C302%2C3812%2C1903&q=45&auto=format&w=1356&h=668&fit=crop' >
     <div class="content">
@@ -24,9 +24,15 @@
    
         </div>
     
-    <input id=btnSubmit class="button" name="submit" type="button" value="Add Item" onclick="addShoppinglist(item.value)" />
+    <input id=btnSubmit class="button" name="submit" type="button" value="Add Thought" onclick="addShoppinglist(item.value)" />
+    <input  class="button" name="about" type="button" value="About" onclick="aboutDisplay()" />
 
         </div>
+           <center><p id="sharelist"></p></center>
+    <center><p id="sharebutton"></p></center>
+      
+  </div>
+
     
     </div>
   <p id="MyList"></p>
@@ -36,6 +42,9 @@
     
 
     <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    
   <div>
   <center><p id="sharelist"></p></center>
     <center><p id="sharebutton"></p></center>
