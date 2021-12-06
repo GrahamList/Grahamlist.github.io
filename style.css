@@ -6,11 +6,17 @@
   opacity: .75;
 }
 
+#sharebutton
+{
+  float: left;
+}
+
 .button
 {
   margin-top: 5px;
   margin-bottom: -5px;
   background-color: #d1e4e3;
+  
 }
 
 #footer
