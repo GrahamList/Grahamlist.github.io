@@ -1,8 +1,8 @@
 // Patrick Graham
 // Fall 2021
 // Web233 Javascript
-// Date: 11/10/21
-// Assignment #14
+// Date: 12/4/21
+// Assignment #15
 
 var addtocart = [];
 
@@ -12,6 +12,8 @@ var MyItems = {
 };
 
 var shoppinglist = [];
+
+
 
 function addShoppinglist(item) {
   var groc="";
@@ -208,7 +210,7 @@ function savecookie()
 }
 
 window.onload = function() {
-alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Students**\n\nQuestions?\nemail Patrick Graham\npjgraham123@gmail.com\n");
+aboutDisplay();
 populateshoppinglistonload();
 displayShoppinglists();
 clearFocus();
@@ -269,12 +271,34 @@ function get(name){
 
   function passlist()
   {
-    var url = "https://rvclist.github.io/rvclist14/index.html?list="+ shoppinglist;
-    //Week 14 add link to sharelist id
-    document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
-    //Copy URL
-    copyToClipboard(url);
-  }
+    var url = "https://grahamlist.github.io/index.html?list="+ shoppinglist;   //replace YOURGITHUBURL with your Github repo URL example: Konkollist.github.io
+    var accessToken = "4bf002a3e5e27b66882ad3d02626457de1df0b9d"; //replace with your NEW Bit.ly TOKEN
+    var params = 
+    {
+       "long_url" : url          
+    };
+    $.ajax({
+       url: "https://api-ssl.bitly.com/v4/shorten",
+       cache: false,
+       dataType: "json",
+       method: "POST",
+       contentType: "application/json",
+       beforeSend: function (xhr) 
+        {
+           xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+        },
+       data: JSON.stringify(params)
+	    }).done(function(data) 
+  {
+		getshorturl = 1;
+		document.getElementById("sharelist").innerHTML = "The URL to share the list:\n" + data.link;
+		copyToClipboard(data.link);
+	}).fail(function(data) {
+		document.getElementById("sharelist").innerHTML = "The URL to share the list:\n" + url;
+		copyToClipboard(URL);
+	});
+}
+
 
   //vFinal share function
   function share()
@@ -287,12 +311,19 @@ function get(name){
     var passbyurl = document.createElement("textarea");
     passbyurl.value = text;
     document.body.appendChild(passbyurl);
-    passbyurl.focus();
-    passbyurl.select();
-    document.execCommand("copy");
-    document.body.removeChild(passbyurl);
-    alert("URL has been copied. Ready to share: " + text);
-    //window.prompt("Copy & Share List!", text);
+ passbyurl.focus();
+ passbyurl.select();
+ document.execCommand("copy");
+ document.body.removeChild(passbyurl);
+ alert("URL has been copied. Ready to share: " + text);
+ //window.prompt("Copy & Share List!", text);
+  
+}
+
+
+  function aboutDisplay()
+  {
+    alert("Welcome to 'Random Thoughts' App!\n\nCreated by Patrick Graham\n**Please type your thought then press the 'Add Thought button to add it to the list*\n\nQuestions?\nemail Patrick Graham\npjgraham123@gmail.com\n");
   }
 
 
