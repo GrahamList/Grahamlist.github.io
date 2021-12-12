@@ -50,8 +50,8 @@ function displayShoppinglists()
     var arrays = shoppinglist[i];
     arrays = "'"+arrays+"'";
     var btnaddcart =  '<input name="add" type="checkbox" id="adds" value="Add to Shopping Cart" onclick="addtoshopcart('+arrays+','+ i +')" />';
-    //Week 14 Add Share Button
-    var btnsharelist = '<input class="button" id="shares" name="shares" type="submit" value="Share Shopping List" onclick="share()" />';
+    
+    var btnsharelist = '<input class="button" id="shares" name="shares" type="submit" value="Share Thought Collection" onclick="share()" />';
     TheRow = '<li>' + shoppinglist[i] + btndelete + ' '  + btnaddcart + '</li>';
     TheList += TheRow;
   }
@@ -93,7 +93,7 @@ TheList += TheRow;
 
 if (arrayLength > 0)
 {
- document.getElementById("MyCart").innerHTML = '<b>Shopping Cart</b> ' + '<br>' + TheList;
+ document.getElementById("MyCart").innerHTML = '<b>Thought Collection</b> ' + '<br>' + TheList;
 }else{
  document.getElementById("MyCart").innerHTML = '';
 }
